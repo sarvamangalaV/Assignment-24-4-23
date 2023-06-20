@@ -1,0 +1,35 @@
+using System;
+
+abstract class Employee
+{
+    public string Name { get; set; }
+    public abstract int GetSalary();
+}
+
+class Developer : Employee
+{
+    public override int GetSalary()
+    {
+        return 5000;
+    }
+}
+
+class Driver : Employee
+{
+    public override int GetSalary()
+    {
+        return 3000;
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Developer dev = new Developer();
+        Driver driver = new Driver();
+
+        Console.WriteLine("Salary of developer: " + dev.GetSalary());
+        Console.WriteLine("Salary of driver: " + driver.GetSalary());
+    }
+}
